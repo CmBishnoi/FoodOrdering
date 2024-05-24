@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import AddCategory from "./components/AddCategory/AddCategory";
+import Home from "./components/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Nav from "./components/Navbar/Nav";
+import Menu_items from "./components/Menu/Menu_items";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Nav/>
+      
+      <Routes>
+      
+
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/additem" element={<Menu_items/>}></Route>
+        <Route path="/addcategory" element={<AddCategory/>}></Route>
+      </Routes>
+    </BrowserRouter>
+   
+     
+    
   );
 }
 
